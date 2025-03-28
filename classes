@@ -1,0 +1,74 @@
+/*  Work in progress 
+    Classes used throughout the system
+*/
+
+
+
+
+//Class for coffee objects
+class CoffeeData {
+  String size = "";
+  String flavour = "";
+  bool strong = false;
+  bool favourite = false;
+  int brewCount = 0;
+
+
+
+  //Input size as s, flavour as f, strong as strength
+  CoffeeData(String s, String f, bool strength){
+    size = s;
+    flavour = f;
+    strong = strength;
+    favourite = false;
+    brewCount = 0;
+  }
+
+  //Used to toggle the favourite status on or off
+  //Favourite status is used for the UI indicator
+  void toggleFav() => favourite = !favourite;
+
+  void brew() => brewCount++;
+}
+
+//Class for users
+class User{
+  late int id;
+  late String username;
+  late String password;
+  bool loggedIn = false;
+  List<CoffeeData> favourites = [];
+
+
+  User(int i, String name, String pass){
+    id = i;
+    username = name;
+    password = pass;
+  }
+
+  void addToFav(CoffeeData data) => favourites.add(data);
+
+  void login() => loggedIn = true;
+
+  void logout() => loggedIn = false;
+}
+
+//Functions
+
+//Password Validation
+//Checks that there is at least 8 characters,
+//At least 1 capital, 1 lowercase, and 1 special character.
+bool passwordValidation(String password){
+  RegExp regex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$');
+  return regex.hasMatch(password);
+}
+
+
+//Username Validation
+//Might add the ability to check that the username is not taken
+bool userNameValidation(String username){
+  if (username.length >= 8){
+    return true;
+  }
+  else return false;
+}
