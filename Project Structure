@@ -21,3 +21,31 @@
 // └── utils/
 //     ├── routes.dart
 //     └── constants.dart
+
+// IMAGES
+coffee_app/
+│
+├── lib/
+│   └── (your existing code structure)
+│
+├── assets/
+│   ├── images/
+│   │   ├── coffees/
+│   │   │   ├── espresso.png
+│   │   │   ├── latte.png
+│   │   │   ├── cappuccino.png
+│   │   │   └── americano.png
+│   │   │
+│   │   ├── icons/
+│   │   │   ├── coffee_icon.png
+│   │   │   ├── favorites_icon.png
+│   │   │   └── stats_icon.png
+│   │   │
+│   │   └── backgrounds/
+│   │       ├── main_menu_bg.png
+│   │       └── login_bg.png
+│   │
+│   └── logos/
+│       └── app_logo.png
+│
+└── pubspec.yaml
