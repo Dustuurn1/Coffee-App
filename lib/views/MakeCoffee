@@ -1,0 +1,130 @@
+class MakeCoffee extends StatefulWidget {
+  const MakeCoffee({super.key});
+
+  @override
+  State<MakeCoffee> createState() => _MakeCoffeeState();
+}
+
+class _MakeCoffeeState extends State<MakeCoffee> {
+  bool _isBrewing = false;
+  var flavour = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding:  EdgeInsets.only(left: 16, right: 16, top: 30),
+        child: Column(
+          children: [
+            const Text('Flavours'),
+            SizedBox(
+              height: 50,
+              child: 
+              ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('French Vanilla')),
+                  Padding(padding: EdgeInsets.only(left: 8)),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Regular Coffee')),
+                  Padding(padding: EdgeInsets.only(left: 8)),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Dark Roast')),
+                  Padding(padding: EdgeInsets.only(left: 8)),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Hot Chocolate')),
+                  Padding(padding: EdgeInsets.only(left: 8)),
+                        
+                      ],
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 16)),
+
+            // Sizes
+            const Text('Sizes'),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Extra Small')),
+                        Padding(padding: EdgeInsets.only(left: 8)),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Small')),
+                        Padding(padding: EdgeInsets.only(left: 8)),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Medium')),
+                        Padding(padding: EdgeInsets.only(left: 8)),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Large')),
+                        Padding(padding: EdgeInsets.only(left: 8)),
+                        
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // Buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Strong'),
+                ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Favourite'),
+                ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Brew'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // Brewing status
+            if (_isBrewing)
+              Text("Brewing"),
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
