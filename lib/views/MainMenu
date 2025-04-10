@@ -1,0 +1,62 @@
+class MainMenu extends StatelessWidget {
+  const MainMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:  Text('Main Main'),
+      ),
+      body: Padding(
+        padding:  EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            // Horizontal ListView with empty containers
+            SizedBox(
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: List.generate(
+                  5,
+                  (index) => Container(
+                    width: 100,
+                    margin: const EdgeInsets.only(right: 8),
+                    color: Colors.grey[300],
+                  ),
+                ),
+              ),
+            ),
+             SizedBox(height: 16),
+
+            // "Make a Coffee" button
+            Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+              IconButton(
+                onPressed: () {},
+                 icon: Icon(Icons.star)),
+              Padding(padding: EdgeInsets.only(right: 70)),
+                Center(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Make a Coffee'),
+                ),
+                ),
+            
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // "Statistics" button
+            ElevatedButton(
+              onPressed: () {
+                // Add navigation or logic for Statistics page here
+              },
+              child:  Text('Statistics'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
