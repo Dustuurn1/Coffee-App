@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.brown[50],
       ),
       routes: Routes.getRoutes(),
-      initialRoute: Routes.mainMenu,
+      initialRoute: Routes.login,
     );
   }
 }
